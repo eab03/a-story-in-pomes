@@ -2,10 +2,10 @@ function initialize() {
 
     var mapOptions = {
         center: {
-            lat: 39,
-            lng: -99
+            lat: 1.352083,
+            lng: 99.819836
         },
-        zoom: 5,
+        zoom: 7,
 
         // disables scroll-initiated zooming
         scrollwheel: false,
@@ -21,16 +21,16 @@ function initialize() {
         mapTypeId: google.maps.MapTypeId.HYBRID,
     };
 
-    var styles = [
+    //var styles = [
         //stuff placed in here will style the map -- when it is a road map displayed
-        {
-            featureType: "administrative.country",
-            elementType: "labels",
-            stylers: [{
-                visibility: "off"
-            }]
-        }
-    ];
+        //{
+           // featureType: "administrative.country",
+            //elementType: "labels",
+            //stylers: [{
+               // visibility: "off"
+            //}]
+        //}
+    //];
 
     // defines map object and applies styling to that object
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -38,44 +38,44 @@ function initialize() {
         styles: styles
     });
 
-    var icon = 'https://s3.amazonaws.com/kpomes/media/map-marker1.png';
-    var markers = [];
+    //var icon = 'https://s3.amazonaws.com/kpomes/media/map-marker1.png';
+    //var markers = [];
     // items added to this list will be added to the navigation map at the top of the site
-    markers[0] = new google.maps.Marker({
-        position: new google.maps.LatLng(42.333172, -83.044960),
-        map: map,
-        icon: icon,
-        title: 'Detroit, MI',
-        url: '#detroit'
-    });
-    markers[1] = new google.maps.Marker({
-        position: new google.maps.LatLng(38.004111, -80.944114),
-        map: map,
-        icon: icon,
-        title: 'Clifftop, WV',
-        url: '#clifftop'
-    });
-    markers[2] = new google.maps.Marker({
-        position: new google.maps.LatLng(34.056915, -118.248311),
-        map: map,
-        icon: icon,
-        title: 'Los Angelas, CA',
-        url: '#la'
-    });
-    markers[3] = new google.maps.Marker({
-        position: new google.maps.LatLng(28.539998, -81.370123),
-        icon: icon,
-        map: map,
-        title: 'Orlando, FL',
-        url: '#orlando'
-    });
+   // markers[0] = new google.maps.Marker({
+        //position: new google.maps.LatLng(42.333172, -83.044960),
+        //map: map,
+        //icon: icon,
+        //title: 'Detroit, MI',
+        //url: '#detroit'
+    //});
+    //markers[1] = new google.maps.Marker({
+        //position: new google.maps.LatLng(38.004111, -80.944114),
+        //map: map,
+        //icon: icon,
+        //title: 'Clifftop, WV',
+        //url: '#clifftop'
+    //});
+   // markers[2] = new google.maps.Marker({
+        //position: new google.maps.LatLng(34.056915, -118.248311),
+        //map: map,
+        //icon: icon,
+        //title: 'Los Angelas, CA',
+        //url: '#la'
+    //});
+    //markers[3] = new google.maps.Marker({
+        //position: new google.maps.LatLng(28.539998, -81.370123),
+        //icon: icon,
+        //map: map,
+        //title: 'Orlando, FL',
+        //url: '#orlando'
+    //});
 
     // turns each map marker into a link
-    for (var i = 0; i < markers.length; i++) {
-        google.maps.event.addListener(markers[i], 'click', function() {
-            window.location.href = this.url;
-        });
-    }
+    //for (var i = 0; i < markers.length; i++) {
+        //google.maps.event.addListener(markers[i], 'click', function() {
+            //window.location.href = this.url;
+        //});
+    //}
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -83,49 +83,59 @@ google.maps.event.addDomListener(window, 'load', initialize);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var html = document.getElementsByTagName('html')[0];
-var media_path_base = 'https://s3.amazonaws.com/kpomes/'
+var media_path_base = 'https://s3.amazonaws.com/eabdgmde15/pomes_images/'
 
-
-var detroit_bgimgs = ['media/detroit/detroit3.jpg', 
-                        'media/detroit/detroit5.jpg', 
-                        'media/detroit/detroit6.jpg', 
-                        'media/detroit/detroit7.jpg', 
-                        'media/detroit/detroit9.jpg', 
-                        'media/detroit/detroit10.jpg'
-                        ];
-var clifftop_bgimgs = ['media/clifftop/clifftop2.jpg', 
-                        'media/clifftop/clifftop3.jpg', 
-                        'media/clifftop/clifftop4.jpg', 
-                        'media/clifftop/clifftop5.jpg', 
-                        'media/clifftop/clifftop12.jpg'
-                        ];
-var la_bgimgs = ['media/la/la1.jpg', 
-                        'media/la/la4.jpg', 
-                        'media/la/la5.jpg', 
-                        'media/la/la6.jpg', 
-                        'media/la/la7.jpg'
-                        ];
-var orlando_bgimgs = ['media/orlando/orlando1.jpg', 
-                        'media/orlando/orlando2.jpg', 
-                        'media/orlando/orlando4.jpg', 
-                        'media/orlando/orlando6.jpg', 
-                        'media/orlando/orlando7.jpg'    
+var spring_bgimgs = ['spring/spring1.jpg', 
+                        'spring/spring2.jpg', 
+                        'spring/spring3.jpg', 
+                        'spring/spring4.jpg', 
+                        'spring/spring5.jpg', 
                         ];
 
-var sng_bgimgs = ['media/sng/sng1.JPG', 
-                        'media/sng/sng2.JPG',
-                        'media/sng/sng3.JPG',  
-                        'media/sng/sng4.JPG', 
-                        'media/sng/sng5.JPG', 
-                        'media/sng/sng6.JPG', 
-                        'media/sng/sng7.JPG'    
-                        ];
+//var html = document.getElementsByTagName('html')[0];
+//var media_path_base = 'https://s3.amazonaws.com/kpomes/'
 
-var bgimgs = {"detroit":detroit_bgimgs.map(function(currentValue) {return media_path_base+currentValue;}), 
-                "clifftop":clifftop_bgimgs.map(function(currentValue) {return media_path_base+currentValue;}), 
-                "la":la_bgimgs.map(function(currentValue) {return media_path_base+currentValue;}), 
-                "orlando":orlando_bgimgs.map(function(currentValue) {return media_path_base+currentValue;}),
-                "sng":sng_bgimgs.map(function(currentValue) {return media_path_base+currentValue;})
+
+//var detroit_bgimgs = ['media/detroit/detroit3.jpg', 
+                        //'media/detroit/detroit5.jpg', 
+                        //'media/detroit/detroit6.jpg', 
+                        //'media/detroit/detroit7.jpg', 
+                        //'media/detroit/detroit9.jpg', 
+                        //'media/detroit/detroit10.jpg'
+                        //];
+
+//var clifftop_bgimgs = ['media/clifftop/clifftop2.jpg', 
+                        //'media/clifftop/clifftop3.jpg', 
+                        // 'media/clifftop/clifftop4.jpg', 
+                        //'media/clifftop/clifftop5.jpg', 
+                        //'media/clifftop/clifftop12.jpg'
+                        //];
+//var la_bgimgs = ['media/la/la1.jpg', 
+                        //'media/la/la4.jpg', 
+                        // 'media/la/la5.jpg', 
+                        //'media/la/la6.jpg', 
+                        // 'media/la/la7.jpg'
+                       // ];
+//var orlando_bgimgs = ['media/orlando/orlando1.jpg', 
+                        //'media/orlando/orlando2.jpg', 
+                        //'media/orlando/orlando4.jpg', 
+                        //'media/orlando/orlando6.jpg',   
+                       // ];
+
+//var sng_bgimgs = ['media/sng/sng1.JPG', 
+                        //'media/sng/sng2.JPG',
+                        //'media/sng/sng3.JPG',  
+                        //'media/sng/sng4.JPG', 
+                        //'media/sng/sng5.JPG', 
+                        //'media/sng/sng6.JPG', 
+                        //'media/sng/sng7.JPG'    
+                        //];
+
+var bgimgs = {"spring":spring_bgimgs.map(function(currentValue) {return media_path_base+currentValue;}), 
+                //"clifftop":clifftop_bgimgs.map(function(currentValue) {return media_path_base+currentValue;}), 
+                //"la":la_bgimgs.map(function(currentValue) {return media_path_base+currentValue;}), 
+               // "orlando":orlando_bgimgs.map(function(currentValue) {return media_path_base+currentValue;}),
+                //"sng":sng_bgimgs.map(function(currentValue) {return media_path_base+currentValue;})
 
             };
 
